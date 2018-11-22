@@ -5,12 +5,16 @@
     <thead class="thead-dark">
       <tr>
         <th scope="col">id</th>
-        <th scope="col">Objet</th>
+        <th scope="col">List of emails</th>
       </tr>
     </thead>
     <tbody>
       <%@all_emails.each do |email|%>
-        <tr class="email-select" id="<%=email.id%>-email-select">
+        <tr class="email-select
+          <%unless email.read%>
+            email_unread
+          <%end%>
+        " id="<%=email.id%>-email-select">
           <th scope="row"><%=email.id%></th>
           <td><%=link_to email.object, email_path(email), remote: true %></td>
         </tr>
@@ -21,7 +25,7 @@
   <table class="table col-md-7">
     <thead class="thead-dark">
       <tr>
-        <th scope="col">Body</th>
+        <th scope="col">Current email</th>
       </tr>
     </thead>
     <tbody>

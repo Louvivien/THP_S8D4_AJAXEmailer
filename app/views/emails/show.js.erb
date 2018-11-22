@@ -1,7 +1,8 @@
 $(document).ready(function() {
 
   let show_email = $("<%= j (render 'layouts/email_content', email: @email) %>");
-// Je crée ma variable new_gossip. Le j signifie escape javascript et permet d'executer de l'erb.
-$('#email-content').html(show_email);
+  // Je crée ma variable new_gossip. Le j signifie escape javascript et permet d'executer de l'erb.
+  $('#<%=@email.id%>-email-select').removeClass('email_unread');
+  $('#email-content').html(show_email);
 
 });

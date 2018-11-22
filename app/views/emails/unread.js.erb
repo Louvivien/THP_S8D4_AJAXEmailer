@@ -1,0 +1,7 @@
+$(document).ready(function() {
+  $('#<%=@email.id%>-email-select').toggleClass('email_unread');
+  
+  let show_email = $("<%= j (render 'layouts/email_content', email: @email) %>");
+  $('#email-content').html(show_email);
+
+});

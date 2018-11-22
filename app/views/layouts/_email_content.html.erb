@@ -1,4 +1,10 @@
 <h3><%= j email.object%></h3>
 <hr>
 <p><%= j email.body%></p>
-<%= link_to 'Delete',  email_path(email.id),  method: :delete, data: { confirm: 'Are you sure?' } %>
+<br>
+<%= link_to 'Delete',  email_path(email.id),  method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger", remote: true %>
+<% if email.read%>
+  <%= link_to 'Mark as unread',  email_unread_path(email.id), class: "btn btn-warning", remote: true %>
+<%else%>
+  <%= link_to 'Mark as read',  email_unread_path(email.id), class: "btn btn-dark", remote: true %>
+<%end%>
