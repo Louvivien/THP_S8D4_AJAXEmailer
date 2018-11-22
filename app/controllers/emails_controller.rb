@@ -27,7 +27,8 @@ class EmailsController < ApplicationController
     puts "on est dans le unread"
     puts "$"*60
     @email = Email.find(params[:id])
-    @email.update(read: !@email.read)
+    status = @email.read
+    @email.update(read: !status)
     respond_to do |format|
       format.html { redirect_to root_path}
       format.js
