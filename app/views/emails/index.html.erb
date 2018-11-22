@@ -1,0 +1,21 @@
+<h1>Emails#index</h1>
+<br>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Object</th>
+      <th scope="col">Body</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%@all_emails.each do |email|%>
+      <tr>
+        <th scope="row"><%=email.id%></th>
+        <td><%=email.object%></td>
+        <td><%=email.body%></td>
+      </tr>
+    <%end%>
+  </tbody>
+</table>
+
