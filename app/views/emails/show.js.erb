@@ -4,5 +4,9 @@ $(document).ready(function() {
   // Je crée ma variable new_gossip. Le j signifie escape javascript et permet d'executer de l'erb.
   $('#<%=@email.id%>-email-select').removeClass('email_unread');
   $('#email-content').html(show_email);
+  
+  $('.email-select').removeClass('email-selected');
+  $('#<%=@email.id%>-email-select').addClass('email-selected');
+
 
 });

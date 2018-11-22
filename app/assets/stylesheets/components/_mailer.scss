@@ -1,4 +1,12 @@
-.email_unread{
-  background-color: yellow;
+.borders{
+  border: 2px solid #DDE1E5;
+}
 
+.email-selected{
+  background-color: #DDE1E5;
+  font-style: italic;
+  
+}
+.email_unread{
+  background-color: #eaea44;
 }

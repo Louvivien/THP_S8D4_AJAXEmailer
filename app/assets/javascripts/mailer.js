@@ -1,7 +1,15 @@
-// $(document).ready(function(){
-//   $('.email-select').click(function(){
-//     var EmailId = $(this).attr('id').substring(0,1);
-//     alert('tu as cliqué sur l\'email numéro '+ EmailId);
-//     $.get( "emails/"+ EmailId);
-//   });
-// });
+$(document).ready(function(){
+  $('.email-select').click(function(){
+    let CssId = $(this).attr('id'); 
+    let EmailId = CssId.substring(0,CssId.indexOf("-"));
+
+    $.ajax({
+      url: "emails/"+ EmailId,
+      data: {
+        id: EmailId
+      },
+      dataType: "script"
+    });
+    
+  });
+});

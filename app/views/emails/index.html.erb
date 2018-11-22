@@ -14,9 +14,9 @@
           <%unless email.read%>
             email_unread
           <%end%>
-        " id="<%=email.id%>-email-select">
+        borders" id="<%=email.id%>-email-select">
           <th scope="row"><%=email.id%></th>
-          <td><%=link_to email.object, email_path(email), remote: true %></td>
+          <td><%=email.object %></td>
         </tr>
       <%end%>
     </tbody>
