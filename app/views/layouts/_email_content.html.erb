@@ -1,0 +1,4 @@
+<h3><%= j email.object%></h3>
+<hr>
+<p><%= j email.body%></p>
+<%= link_to 'Delete',  email_path(email.id),  method: :delete, data: { confirm: 'Are you sure?' } %>

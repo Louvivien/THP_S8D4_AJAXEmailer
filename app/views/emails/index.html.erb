@@ -1,21 +1,33 @@
 <h1>Emails#index</h1>
 <br>
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">id</th>
-      <th scope="col">Object</th>
-      <th scope="col">Body</th>
-    </tr>
-  </thead>
-  <tbody>
-    <%@all_emails.each do |email|%>
+<div class="row container-fluid mx-2">
+  <table class="table col-md-5">
+    <thead class="thead-dark">
       <tr>
-        <th scope="row"><%=email.id%></th>
-        <td><%=email.object%></td>
-        <td><%=email.body%></td>
+        <th scope="col">id</th>
+        <th scope="col">Objet</th>
       </tr>
-    <%end%>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <%@all_emails.each do |email|%>
+        <tr class="email-select" id="<%=email.id%>-email-select">
+          <th scope="row"><%=email.id%></th>
+          <td><%=link_to email.object, email_path(email), remote: true %></td>
+        </tr>
+      <%end%>
+    </tbody>
+  </table>
 
+  <table class="table col-md-7">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Body</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="email-content"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -17,9 +17,10 @@ require 'faker'
 #     my_task.save
 #   end
 # end
+Email.all.destroy_all
 
-4.times do
-  Email.create(object: Faker::Book.title, body: Faker::FamousLastWords.last_words+" \n "+Faker::FamousLastWords.last_words)
+10.times do
+  Email.create(object: Faker::Book.title, body: Faker::Lorem.paragraph(15))
 end
 
 
